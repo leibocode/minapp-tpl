@@ -1,6 +1,6 @@
 //配置文件
 const config = {
-  url: ''
+  url: 'http://localhost:3001'
 }
 
 export {

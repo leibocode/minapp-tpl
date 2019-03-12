@@ -3,7 +3,7 @@ import {
 } from '../config.js'
 
 /**
- * http 请求类
+ * http-promise 请求类
  */
 const tips = {
   1: '抱歉,出现一个错误',
@@ -15,33 +15,30 @@ export default class Http {
     this.baseRestUrl = config.url
   }
 
-  request(){
-    return new Promise((resolve,reject)=>{})
+  request({url,data,method='GET'}){
+    return new Promise((resolve,reject)=>{
+      this._request(url,resolve,reject,data,method)
+    })
   }
 
-  _request(params) {
+  _request(url,resolve,reject,data={},method='GET') {
 
     let url = this.baseRestUrl + params.url
-    if (!params.method) {
-      params.method = 'Get'
-    }
-    if (params.token) {
-      url = params.token
-    }
     wx.request({
       url: url,
       method: params.method,
       data: params.data,
       headers: {
-        'Content-type': 'application/x-www-form-urlencoded'
+        'content-type':'application/json'
       },
       success: (res) => {
         let code = res.statusCode.toString()
         if (code.startsWith('2')) {
-          params.success && params.success(res.data)
+           resolve(res.data)
         } else {
-          let error_code = res.data.error_data
-
+           reject()
+           const error_code  = res.data.error_code
+           this._show_error(error_code)
         }
       },
       fail: (err) => {

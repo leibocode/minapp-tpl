@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/home/home"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#479de6",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "小程序模板",
+    "backgroundColor": "#479de6",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#479de6",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "posution": "bottom",
+    "list": []
+  },
+  "debug": true
+}

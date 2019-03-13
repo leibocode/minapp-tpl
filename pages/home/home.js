@@ -1,5 +1,7 @@
 import HomeModel from '../../models/home.model'
 
+const { regeneratorRuntime } = global 
+
 const home = HomeModel()
 
 Page({

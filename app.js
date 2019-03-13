@@ -1,5 +1,6 @@
+// global.regeneratorRuntime = require('./lib/runtime-module')
+const regeneratorRuntime = require('./utils/runtime-module')
 
-import './utils/runtime'
 App({
     onLoad:function(){
         console.log('test')

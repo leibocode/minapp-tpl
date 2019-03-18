@@ -23,11 +23,12 @@ export default class Http {
 
   _request(baseUrl,resolve,reject,data={},method='GET') {
 
-    let url = this.baseRestUrl + params.url
+    let url = this.baseRestUrl + baseUrl
+    console.log('请求地址'+url)
     wx.request({
       url: url,
-      method: params.method,
-      data: params.data,
+      method: method,
+      data: data,
       headers: {
         'content-type':'application/json'
       },

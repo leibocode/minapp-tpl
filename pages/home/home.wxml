@@ -1,6 +1,6 @@
 <view>
-   <text>{{text}}</text>
+   <text>{{users[0].username}}</text>
    <i-row>
-   
+      <i-col span="8" wx:for="(item,index) in users" wx:key="index">{{user.username}}</i-col>
    </i-row>
 </view>

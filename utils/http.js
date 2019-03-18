@@ -21,7 +21,7 @@ export default class Http {
     })
   }
 
-  _request(url,resolve,reject,data={},method='GET') {
+  _request(baseUrl,resolve,reject,data={},method='GET') {
 
     let url = this.baseRestUrl + params.url
     wx.request({

@@ -1,18 +1,15 @@
-import HomeModel from '../../models/home.model'
 
-const { regeneratorRuntime } = global 
+import HomeModel from '../../models/home.js'
 
-const home = HomeModel()
 
+const home = new HomeModel()
 Page({
-    data:{
-        list:[]
-    },
-    async onLoad:function(){
-        const data = await home.getList()
-        console.log(data)
-        this.setData({
-          list:data
-        })
-    }
+  data:{
+    text:'test'
+  },
+  onLoad:function(){
+    console.log('test')
+  },
+  _loadData:function(){
+  }
 })

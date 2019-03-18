@@ -1,4 +1,6 @@
 <view>
+   <text>{{text}}</text>
    <i-row>
+   
    </i-row>
 </view>

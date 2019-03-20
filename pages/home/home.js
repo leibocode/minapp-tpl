@@ -1,12 +1,13 @@
 import regeneratorRuntime from '../../utils/runtime.js'
 import HomeModel from '../../models/home.js'
 
+const { $Toast } = require('../../dist/base/index')
 
 const home = new HomeModel()
 Page({
   data:{
     text:'test',
-    users:[]
+    users:[],
   },
   onLoad:function(){
     console.log('test')
@@ -15,7 +16,6 @@ Page({
   },
   async _loadData(){
     let data = await home.getList()
-    console.log(data)
     this.setData({
       users:data
     })

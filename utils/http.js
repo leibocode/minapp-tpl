@@ -2,6 +2,8 @@ import {
   config
 } from '../config.js'
 
+const { $Toast } = require('../dist/base/index')
+
 /**
  * http-promise 请求类
  */
@@ -44,6 +46,7 @@ export default class Http {
       },
       fail: (err) => {
         console.log(err)
+        //原生提示
         this._show_error(1)
       }
     })

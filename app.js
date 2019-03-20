@@ -3,6 +3,6 @@ const regeneratorRuntime = require('./utils/runtime-module')
 
 App({
     onLoad:function(){
-        console.log('test')
+        console.log('minapp-tpl模板')
     }
 })
